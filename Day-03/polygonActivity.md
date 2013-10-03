@@ -24,7 +24,8 @@ circle(35, 70, r = 20, ry = 30, col = scales::alpha("pink", 0.3))
 polygon(c(20, 40, 40, 20), c(60, 60, 40, 40), col = "green", border = "blue", 
     lwd = 10)
 polygon(c(25, 40, 40, 25), c(30, 30, 15, 15), col = "red", border = "black")
-polygon(c(60, 75, 90, 85, 65), c(65, 80, 65, 45, 45), col = "yellow")
+polygon(c(60, 75, 90, 85, 65), c(65, 80, 65, 45, 45), col = scales::alpha("yellow", 
+    0.7))
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
