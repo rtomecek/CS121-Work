@@ -1,0 +1,12 @@
+Pig Latinizer
+========================================================
+
+pigLatinRule <- function(word) {
+ if ( grepl(_pattern_, word) ) {
+   res <- _corresponding string value_
+   } else {
+    res <- _another string value
+   }
+ return( res )
+}
+
