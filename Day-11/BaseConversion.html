@@ -183,7 +183,7 @@ hljs.initHighlightingOnLoad();
 
 <h1></h1>
 
-<h2>Task 1</h2>
+<h1>Task 1</h1>
 
 <p>toBase(Z,b)
 return(written expression of integer in that base)</p>
@@ -202,7 +202,7 @@ return(written expression of integer in that base)</p>
 }
 </code></pre>
 
-<p>Test Statements</p>
+<h2>Test Statements</h2>
 
 <pre><code class="r">toBase(z = 10, b = 2)
 </code></pre>
@@ -220,6 +220,57 @@ return(written expression of integer in that base)</p>
 </code></pre>
 
 <pre><code>## [1] &quot;3&quot;  &quot;14&quot; &quot;8&quot;
+</code></pre>
+
+<h1>Task 2 Without a loop</h1>
+
+<pre><code class="r">basetoNumeric &lt;- function(Nvec, b) {
+    howMany &lt;- length(Nvec)
+    herdsize &lt;- b^((howMany - 1):0)
+    return(sum(as.numeric(Nvec) * herdsize))
+}
+</code></pre>
+
+<h2>Test Statements</h2>
+
+<pre><code class="r">basetoNumeric(c(&quot;7&quot;, &quot;6&quot;, &quot;5&quot;, &quot;4&quot;), 8)
+</code></pre>
+
+<pre><code>## [1] 4012
+</code></pre>
+
+<pre><code class="r">basetoNumeric(c(&quot;7&quot;, &quot;6&quot;, &quot;5&quot;, &quot;4&quot;), 9)
+</code></pre>
+
+<pre><code>## [1] 5638
+</code></pre>
+
+<h1>Task 2 With a Loop</h1>
+
+<pre><code class="r">convertAsALoop &lt;- function(Nvec, b) {
+    Nvec &lt;- as.numeric(Nvec)
+    sheepCount &lt;- 0
+    boxSize &lt;- 1
+    for (k in length(Nvec):1) {
+        sheepCount &lt;- sheepCount + boxSize * Nvec[k]
+        boxSize &lt;- boxSize * b
+    }
+    return(sheepCount)
+}
+</code></pre>
+
+<h2>Test Statements</h2>
+
+<pre><code class="r">convertAsALoop(c(&quot;7&quot;, &quot;6&quot;, &quot;5&quot;, &quot;4&quot;), 8)
+</code></pre>
+
+<pre><code>## [1] 4012
+</code></pre>
+
+<pre><code class="r">convertAsALoop(c(&quot;7&quot;, &quot;6&quot;, &quot;5&quot;, &quot;4&quot;), 9)
+</code></pre>
+
+<pre><code>## [1] 5638
 </code></pre>
 
 </body>
