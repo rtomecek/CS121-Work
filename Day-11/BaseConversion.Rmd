@@ -1,0 +1,17 @@
+## Base Conversion
+========================================================
+
+# Task 1
+
+toBase(Z,b)
+return(written expression of integer in that base)
+
+toBase <- function( ){
+
+
+# Task 2
+
+baseToNumeric <- function( ){
+
+
+
