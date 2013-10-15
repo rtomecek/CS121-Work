@@ -181,7 +181,7 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Interacting with Loops</h1>
 
-<h1>BLooping a Launch</h1>
+<h1>Looping a Launch</h1>
 
 <h2>Using while</h2>
 
@@ -189,7 +189,7 @@ hljs.initHighlightingOnLoad();
     # Time is a positive integer in seconds
     while (time != 0) {
         Sys.sleep(1)
-        cat(time, &quot;&quot;)
+        cat(time, &quot;\n&quot;)
         time &lt;- time - 1
     }
     Sys.sleep(1)
@@ -202,12 +202,70 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">blastoffWhile(5)
 </code></pre>
 
-<pre><code>## 5 4 3 2 1 Blastoff!
+<pre><code>## 5 
+## 4 
+## 3 
+## 2 
+## 1 
+## Blastoff!
 </code></pre>
 
-<h2>Using for</h2>
+<h2>Countdown</h2>
+
+<pre><code class="r">countdown &lt;- function(time) {
+    for (k in time:1) {
+        starttime &lt;- Sys.time()
+        system(paste(&quot;say&quot;, k))
+        now &lt;- starttime()
+        Sys.sleep(1 - as.numeric(now - starttime))
+    }
+    system(&quot;say blastoff!&quot;)
+}
+</code></pre>
 
 <h2>Test Statements</h2>
+
+<pre><code class="r">countdown(5)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;starttime&quot;
+</code></pre>
+
+<h1>Testing Human Response Times</h1>
+
+<pre><code class="r">
+getData &lt;- function(N) {
+    result &lt;- rep(NA, N)
+    for (k in 1:N) {
+        before &lt;- Sys.time()
+        readline(&quot;Press return&quot;)
+        after &lt;- Sys.time()
+        delay &lt;- as.numeric(after - before)
+        cat(rep(&quot;\n&quot;, 20))
+        result[k] &lt;- delay
+        Sys.sleep(runif(1, min = 1, max = 5))
+    }
+    return(result)
+}
+</code></pre>
+
+<h1>Testing Human Response Times</h1>
+
+<pre><code class="r">getData &lt;- function(N) {
+    for (k in 1:N) {
+        before &lt;- Sys.time()
+        readline(&quot;Press Return:&quot;)
+        after &lt;- Sys.time()
+        delay &lt;- as.numeric(after - before)
+        cat(rep(&quot;&quot;, 20))
+        result &lt;- delay
+        Sys.sleep(runif(1, min = 1, max = 5))
+    }
+    return(result)
+}
+</code></pre>
+
+<p>load(&ldquo;RobertData.RData&rdquo;)</p>
 
 </body>
 

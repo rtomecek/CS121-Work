@@ -24,14 +24,12 @@ blastoffWhile(5)
 ## Countdown
 ```{r}
 countdown <- function(time){
-  
-  for k in time:1)
+  for (k in time:1){
     starttime <- Sys.time()
     system(paste("say", k))
     now <- starttime()
-    Sys.sleep( 1- as.numeric(now-starttime))
+    Sys.sleep(1-as.numeric(now-starttime))
   }
-
 system("say blastoff!")
 }  
 ```
@@ -62,18 +60,18 @@ return(result)
 # Testing Human Response Times
 ```{r}
 getData <- function(N){
-  for (k in 1:n)
+  for (k in 1:N){
     before <- Sys.time()
-    readline("Press Return")
+    readline("Press Return:")
     after <- Sys.time()
-    delay <- as.numeric(affter-before)
+    delay <- as.numeric(after-before)
     cat(rep("", 20))
     result <- delay
-    Sys.sleep(runif(1, min=1, max=5)
+    Sys.sleep(runif(1, min=1, max=5))
   }
-return(result[k])
+return(result)
 }
 ```
 
+load("RobertData.RData")
 
-    
