@@ -8,7 +8,7 @@ countOdds <- function(x){
   return()
   }
 ```
-
+ 
 ## Test Cases
 ```{r}
 countOdds(1:9)
