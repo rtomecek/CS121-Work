@@ -111,6 +111,6 @@ thetaFromLengthsTest <- function(a,b,theta){
 ```{r}
 
 ```
-
+ 
 
 
