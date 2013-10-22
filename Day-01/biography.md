@@ -1,0 +1,18 @@
+Robert Tomecek's bio  
+===================
+![text](http://www.dailyherald.com/apps/pbcsi.dll/bilde?Site=DA&Date=20121025&Category=SPORTS&ArtNo=710259556&Ref=EP&NewTbl=1&item=18&maxw=182&maxh=291&Q=70&&updated=)
+## Currently 
+
+I am a first year student at [Macalester College] (www.macalester.edu) 
+I am on the soccer team and I am a defender. I am planning on majoring in Economics.
+ 
+## Previously
+
+I grew up in Lisle, Illinois, a suburb of Chicago. I have lived in Illinois all my life. I went to private, Catholic grade school and high school.
+
+## Family
+
+I have a sister who is a junior at the University of Illinois Urbana-Champaign, where my dad also attended college and 2 brothers in 6th and 8th grades.
+
+## Interests
+I enjoy playing sports, especially soccer, spending time outside, watching sportscenter and meeting new people.
