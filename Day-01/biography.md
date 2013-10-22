@@ -1,4 +1,4 @@
-Robert Tomecek's bio  
+Robert Tomecek's Biography
 ===================
 ![text](http://www.dailyherald.com/apps/pbcsi.dll/bilde?Site=DA&Date=20121025&Category=SPORTS&ArtNo=710259556&Ref=EP&NewTbl=1&item=18&maxw=182&maxh=291&Q=70&&updated=)
 ## Currently 
