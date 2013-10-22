@@ -34,7 +34,7 @@ newAddNSeq <- function(v){
 
 # Test Cases
 ```{r}
-
+newAddNSeq(1:10)
 ```
 
 # Natural settings for recursion
@@ -52,5 +52,51 @@ integrateRecursive <- function(f, a = 0, b = 1) {
 }
 ```
 
+
+# Plotting a function
+```{r}
+plotF <- function(f, a=0, b=1){
+  # State 
+  
+  # Loop
+  
+  # Change
+  
+  # Return
+  return()
+  
+```
+
+# gaussQuadrature function thing
+```{r}
+gaussQuadrature <- function(f, a = 0, b = 1) {
+    # Just 4 function evaluations!
+
+    # 'Magic' values on z in [0,1]
+    z <- c(c(-1, 1) * sqrt((3 - 2 * sqrt(6/5))/7), c(-1, 1) * sqrt((3 + 2 * 
+        sqrt(6/5))/7))
+    # weights (analogous to bin width)
+    w <- c(rep((18 + sqrt(30))/36, 2), rep((18 - sqrt(30))/36, 2))
+    # Translate to interval x in [a,b]
+    x <- ((b - a)/2) * z + (a + b)/2
+    # evaluate the function at x, multiply by weights, and sum
+    return(((b - a)/2) * sum(w * sapply(x, f)))
+}
+```
+
+
+# getX function
+```{r}
+getX <- function(f, a=0, b=1){
+  # state
+  
+  # loop
+  
+  # change state
+  
+  # return
+  return()
+  
+```
 
 

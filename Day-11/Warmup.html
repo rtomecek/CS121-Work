@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<title>Recursion Intro</title>
+<title>Day 11 Warmup</title>
 
 <style type="text/css">
 body, td {
@@ -179,60 +179,132 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Recursion Intro</h1>
+<h1>Day 11 Warmup</h1>
 
-<h1>Write another form of the loop</h1>
+<pre><code class="r">mySum &lt;- function(v) {
+    sofar &lt;- 0
+    k &lt;- 1
+    repeat {
+        sofar &lt;- sofar + v[k]
+        k &lt;- k + 1
+        if (k == (length(v) + 1)) 
+            break
+    }
+    return(sofar)
+}
 
-<h1>Add NSeq</h1>
+mySum(1:10)
+</code></pre>
 
-<pre><code class="r">addNSeq &lt;- function(v) {
-    sum &lt;- 0  # accumulator
+<pre><code>## [1] 55
+</code></pre>
+
+<p>mySumwhile program</p>
+
+<pre><code class="r">mySumwhile &lt;- function(v) {
+    # set up state
+    sofar &lt;- 0
+    k &lt;- 1
+    # loop
+    while (k != (length(v) + 1)) {
+        # update state
+        sofar &lt;- sofar + v[k]
+        k &lt;- k + 1
+    }
+
+    # what to do with results
+    return(sofar)
+}
+mySumwhile(1:10)
+</code></pre>
+
+<pre><code>## [1] 55
+</code></pre>
+
+<p>mySumFor Program</p>
+
+<pre><code class="r">mySumFor &lt;- function(v) {
+    # set up state
+    sofar &lt;- 0
+    # loop
     for (k in 1:length(v)) {
-        sum &lt;- sum + v[k]
+        # update state
+        sofar &lt;- sofar + v[k]
     }
-    return(sum)
+    # what to do with results
+    return(sofar)
 }
-</code></pre>
-
-<h1>Test Cases</h1>
-
-<pre><code class="r">addNSeq(1:10)
+mySumFor(1:10)
 </code></pre>
 
 <pre><code>## [1] 55
 </code></pre>
 
-<h1>Adding Recursively</h1>
+<p>Running Sum Program</p>
 
-<pre><code class="r">newAddNSeq &lt;- function(v) {
-    # Base Case
-    if (length(v) == 0) 
-        return(0)
-    return(v[1] + newAddNSeq(v[-1]))
-}
-</code></pre>
-
-<h1>Test Cases</h1>
-
-<pre><code class="r">newAddNSeq(1:10)
-</code></pre>
-
-<pre><code>## [1] 55
-</code></pre>
-
-<h1>Natural settings for recursion</h1>
-
-<pre><code class="r">integrateRecursive &lt;- function(f, a = 0, b = 1) {
-    bigBins &lt;- simpleRiemann(f, a = a, b = b, n = 5)
-    smallBins &lt;- simpleRiemann(f, a = a, b = b, n = 10)
-    if (abs(bigBins - smallBins) &lt; 1e-05) 
-        return(smallBins) else {
-        mid &lt;- (a + b)/2
-        total &lt;- integrateRecursive(f, a = a, b = mid) + integrateRecursive(f, 
-            a = mid, b = b)
-        return(total)
+<pre><code class="r">myRunningSum &lt;- function(v) {
+    # set up state
+    sofar &lt;- 0
+    res &lt;- c()
+    for (k in 1:length(v)) {
+        # update state
+        sofar &lt;- sofar + v[k]
+        res &lt;- c(res, sofar)
     }
+    # What to do with results
+    return(res)
 }
+myRunningSum(1:10)
+</code></pre>
+
+<pre><code>##  [1]  1  3  6 10 15 21 28 36 45 55
+</code></pre>
+
+<p>Runnning Sum Backwards</p>
+
+<pre><code class="r">myRunningSum &lt;- function(v) {
+    # set up state
+    sofar &lt;- 0
+    res &lt;- c()
+    for (k in v) {
+        # update state
+        sofar &lt;- sofar + v[k]
+        res &lt;- c(sofar, res)
+    }
+    # What to do with results
+    return(res)
+}
+myRunningSum(1:10)
+</code></pre>
+
+<pre><code>##  [1] 55 45 36 28 21 15 10  6  3  1
+</code></pre>
+
+<p>myUnique</p>
+
+<pre><code class="r">myUnique &lt;- function(v) {
+    # set up state
+    already &lt;- c()
+    for (k in v) {
+        # update state It&#39;s already in it
+        if ((k %in% already)) {
+            already &lt;- c(already, &quot;***&quot;)
+        } else {
+            # a new one!
+            already &lt;- c(already, k)
+        }
+    }
+    # What to do with results
+    return(already)
+}
+</code></pre>
+
+<p>Test statement</p>
+
+<pre><code class="r">myUnique(c(&quot;dog&quot;, &quot;ant&quot;, &quot;bee&quot;, &quot;cat&quot;, &quot;dog&quot;))
+</code></pre>
+
+<pre><code>## [1] &quot;dog&quot; &quot;ant&quot; &quot;bee&quot; &quot;cat&quot; &quot;***&quot;
 </code></pre>
 
 </body>

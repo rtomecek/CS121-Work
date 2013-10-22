@@ -43,9 +43,31 @@ newAddNSeq <- function(v) {
 
 # Test Cases
 
+```r
+newAddNSeq(1:10)
+```
+
+```
+## [1] 55
+```
 
 
-# 
+# Natural settings for recursion
+
+```r
+integrateRecursive <- function(f, a = 0, b = 1) {
+    bigBins <- simpleRiemann(f, a = a, b = b, n = 5)
+    smallBins <- simpleRiemann(f, a = a, b = b, n = 10)
+    if (abs(bigBins - smallBins) < 1e-05) 
+        return(smallBins) else {
+        mid <- (a + b)/2
+        total <- integrateRecursive(f, a = a, b = mid) + integrateRecursive(f, 
+            a = mid, b = b)
+        return(total)
+    }
+}
+```
+
 
 
 

@@ -1,11 +1,25 @@
 Day 12 in-class stuff
 ========================================================
 
+# Blastoff Warmup thing
 
+## Using while
+```{r}
+blastoffWhile <- function(time){
+  while(time!=0){
+    Sys.sleep(1)
+    cat(time,"")
+    time <- time-1
+    }
+  Sys.sleep(1)
+  cat("Blastoff!")
+}
+```
 
-
-
-
+## Test Statements
+```{r}
+blastoffWhile(5)
+```
 
 
 

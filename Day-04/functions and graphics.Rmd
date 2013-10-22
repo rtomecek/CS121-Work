@@ -1,0 +1,15 @@
+## Functions and Graphics
+========================================================
+circle <- function(x,y,r,...) {
+angs <- seq(0,2*pi,length=20)
+xpts <- x+r*cos(angs)
+ypts <- y+r*sin(angs)
+polygon(xpts,ypts,...)
+}
+
+
+canvas <- function(mn=0,mx=100){
+  plot( 1:2, ylim=c(mn,mx), ylim=c(mn,mx) )
+}
+
+ 

@@ -10,3 +10,5 @@ pigLatinRule <- function(word) {
  return( res )
 }
 
+"^[^aeiou].+$"
+"^[^aeiou]+$"
