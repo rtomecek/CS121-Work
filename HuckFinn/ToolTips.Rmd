@@ -1,13 +1,41 @@
 Tool Tips
 ========================================================
+ 
+# formatWord Function
+```{r}
+formatWord <- function(word, translation, class){
+  word <-
+  translation <- 
+  class <- 
+  
+  return(word, translation, class)
+  }
+```
+
+# Test Case
+```{r}
+formatWord("Hello", "hi there!", class = "hiword")
+```
 
 
+cat(formatWord("Hello", "hi there!", class = "hiword"), "to", "all", "of", "you", 
+    "in", formatWord("Television Land.", "TV viewers", class = "hiword"))
+
+# Your Task 
+## 1
 ```{r}
 
 ```
 
+## 2
+```{r}
+
+```
+
+## Test Statement
 
 
+## 3
 ```{r}
 
 ```
