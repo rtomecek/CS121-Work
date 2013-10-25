@@ -53,6 +53,33 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "hlole"
+## [1] "eollh"
+```
+
+
+## VowelBleeper
+
+
+```r
+# Definition Here
+
+```
+
+
+
+```r
+# Test Statements
+
+```
+
+
+## L33t 
+
+
+
+
+```r
+# Test Statements
+
 ```
 
