@@ -1,6 +1,35 @@
 # Crosswords, Scrabble, and Regular Expressions
 ========================================================
 
+## Summarizing the List
 
 
+
+
+## Crossword helper function
+
+```r
+crossword <- function(x) {
+    
+}
+```
+
+
+
+## Crossword Pattern function
+
+```r
+crosswrodPattern <- function(x) {
+    
+}
+```
+
+
+## Scrabble function
+
+```r
+scrabble <- function(x) {
+    
+}
+```
 
