@@ -1,4 +1,26 @@
 Substitution Cypher
 ========================================================
 
+## Step 1: Key
+```{r}
 
+
+```
+
+## Step 2: The Cypher
+```{r}
+
+
+```
+
+## Step 3: Encryption
+```{r}
+
+
+```
+
+## Step 4: Decryption (use rev() on step 3?)
+```{r}
+
+
+```
