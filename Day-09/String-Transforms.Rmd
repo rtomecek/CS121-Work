@@ -38,18 +38,29 @@ Scrambler("hello")
 
 ```{r}
 # Definition Here
-
+VowelBleeper <- function(word){
+  letters <- (strsplit(word,""))
+  a <- "*"
+  e <- "*"
+  i <- "*"
+  o <- "*"
+  u <- "*"
+  paste(letters,collapse=)
+  }
 ```
 
 ```{r}
 # Test Statements
-
+VowelBleeper("computer")
+VowelBleeper("higher")
+VowelBleeper("cat")
 ```
 
 ## L33t 
 ```{r}
+L33t <- function(){
 
-
+  }
 ```
 
 ```{r}

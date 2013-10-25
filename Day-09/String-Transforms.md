@@ -53,7 +53,7 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "eollh"
+## [1] "lolhe"
 ```
 
 
@@ -62,19 +62,52 @@ Scrambler("hello")
 
 ```r
 # Definition Here
-
+VowelBleeper <- function(word) {
+    letters <- (strsplit(word, ""))
+    a <- "*"
+    e <- "*"
+    i <- "*"
+    o <- "*"
+    u <- "*"
+    paste(letters, collapse = )
+}
 ```
 
 
 
 ```r
 # Test Statements
+VowelBleeper("computer")
+```
 
+```
+## [1] "c(\"c\", \"o\", \"m\", \"p\", \"u\", \"t\", \"e\", \"r\")"
+```
+
+```r
+VowelBleeper("higher")
+```
+
+```
+## [1] "c(\"h\", \"i\", \"g\", \"h\", \"e\", \"r\")"
+```
+
+```r
+VowelBleeper("cat")
+```
+
+```
+## [1] "c(\"c\", \"a\", \"t\")"
 ```
 
 
 ## L33t 
 
+```r
+L33t <- function() {
+    
+}
+```
 
 
 

@@ -220,20 +220,48 @@ Scrambler &lt;- function(word) {
 Scrambler(&quot;hello&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;eollh&quot;
+<pre><code>## [1] &quot;lolhe&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
 
 <pre><code class="r"># Definition Here
-
+VowelBleeper &lt;- function(word) {
+    letters &lt;- (strsplit(word, &quot;&quot;))
+    a &lt;- &quot;*&quot;
+    e &lt;- &quot;*&quot;
+    i &lt;- &quot;*&quot;
+    o &lt;- &quot;*&quot;
+    u &lt;- &quot;*&quot;
+    paste(letters, collapse = )
+}
 </code></pre>
 
 <pre><code class="r"># Test Statements
+VowelBleeper(&quot;computer&quot;)
+</code></pre>
 
+<pre><code>## [1] &quot;c(\&quot;c\&quot;, \&quot;o\&quot;, \&quot;m\&quot;, \&quot;p\&quot;, \&quot;u\&quot;, \&quot;t\&quot;, \&quot;e\&quot;, \&quot;r\&quot;)&quot;
+</code></pre>
+
+<pre><code class="r">VowelBleeper(&quot;higher&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;c(\&quot;h\&quot;, \&quot;i\&quot;, \&quot;g\&quot;, \&quot;h\&quot;, \&quot;e\&quot;, \&quot;r\&quot;)&quot;
+</code></pre>
+
+<pre><code class="r">VowelBleeper(&quot;cat&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;c(\&quot;c\&quot;, \&quot;a\&quot;, \&quot;t\&quot;)&quot;
 </code></pre>
 
 <h2>L33t</h2>
+
+<pre><code class="r">L33t &lt;- function() {
+
+}
+</code></pre>
 
 <pre><code class="r"># Test Statements
 
