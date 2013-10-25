@@ -19,27 +19,30 @@ digitToWord <- function(v){
 
 ## LettersMatch function
 ```{r}
-LettersMatch <- function(words,pattern)
-
+LettersMatch <- function(words,pattern){
+  
+  }
 ```
 
 ## piSeries function
 ```{r}
-piSeries <- function(n)
+piSeries <- function(n){
   
-  
+  }
 ```
 
 ## How Close to Pi function
 ```{r}
-howCloseToPi <- function(n)
+howCloseToPi <- function(n){
 
+  }
 ```
 
 ## Random Approx. to Pi function
 ```{r}
-randomApproxToPi <- function(n)
+randomApproxToPi <- function(n){
 
+  }
 ```
 
 

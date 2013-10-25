@@ -23,9 +23,38 @@ digitToWord <- function(v) {
 
 ## LettersMatch function
 
+```r
+LettersMatch <- function(words, pattern) {
+    
+}
+```
 
 
+## piSeries function
 
+```r
+piSeries <- function(n) {
+    
+}
+```
+
+
+## How Close to Pi function
+
+```r
+howCloseToPi <- function(n) {
+    
+}
+```
+
+
+## Random Approx. to Pi function
+
+```r
+randomApproxToPi <- function(n) {
+    
+}
+```
 
 
 
