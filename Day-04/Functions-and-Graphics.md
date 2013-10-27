@@ -5,8 +5,8 @@
 
 ```r
 countOdds <- function(x) {
+    sum(x%%2)
     
-    return()
 }
 ```
 
@@ -18,7 +18,7 @@ countOdds(1:9)
 ```
 
 ```
-## NULL
+## [1] 5
 ```
 
 
@@ -28,7 +28,7 @@ countOdds(c(3, 5, 7))
 ```
 
 ```
-## NULL
+## [1] 3
 ```
 
 
@@ -38,7 +38,7 @@ countOdds(c(3, 5, 7, 6, 2, 0))
 ```
 
 ```
-## NULL
+## [1] 3
 ```
 
 
@@ -46,7 +46,7 @@ countOdds(c(3, 5, 7, 6, 2, 0))
 
 ```r
 countEvens <- function(x) {
-    
+    length(x) - countOdds(x)
 }
 ```
 
@@ -58,7 +58,7 @@ countEvens(1:9)
 ```
 
 ```
-## NULL
+## [1] 4
 ```
 
 
@@ -68,7 +68,7 @@ countEvens(c(3, 5, 7))
 ```
 
 ```
-## NULL
+## [1] 0
 ```
 
 
@@ -78,7 +78,7 @@ countEvens(c(3, 5, 7, 6, 2, 0))
 ```
 
 ```
-## NULL
+## [1] 3
 ```
 
 
@@ -87,7 +87,7 @@ countEvens(c(3, 5, 7, 6, 2, 0))
 
 ```r
 hypotenuseLength <- function(a, b) {
-    
+    sqrt(a^2 + b^2)
 }
 ```
 
@@ -99,7 +99,7 @@ hypotenuseLength(3, 4)
 ```
 
 ```
-## NULL
+## [1] 5
 ```
 
 
@@ -109,7 +109,7 @@ hypotenuseLength(13, 84)
 ```
 
 ```
-## NULL
+## [1] 85
 ```
 
 
@@ -117,73 +117,86 @@ hypotenuseLength(13, 84)
 
 ```r
 lawOfCosines <- function(a, b, theta) {
-    
-    return(c)
+    sqrt(a^2 + b^2 - 2 * a * b * cos(theta))
 }
-```
 
 
 ## Test Cases
 
-```r
 lawOfCosines(13, 84, pi/2)  # right triangle
 ```
 
 ```
-## function (..., recursive = FALSE)  .Primitive("c")
+## [1] 85
 ```
 
-
-
 ```r
+
+
+
 lawOfCosines(13, 84, 0)  # collapsed with theta=0
 ```
 
 ```
-## function (..., recursive = FALSE)  .Primitive("c")
+## [1] 71
 ```
 
-
-
 ```r
+
+
+
 lawOfCosines(5, 5, pi/3)
 ```
 
 ```
-## function (..., recursive = FALSE)  .Primitive("c")
+## [1] 5
 ```
+
+```r
 
 
 # thetaFromLengths function
+```
 
 ```r
 thetaFromLengths <- function(a, b, c) {
-    
-    return(theta)
+    acos((c^2 - a^2 - b^2)/(-2 * a * b))
 }
-```
 
 
 ## Test Case
+```
 
 ```r
 thetaFromLengths(3, 4, 5)  # should be pi/2
 ```
 
 ```
-## Error: object 'theta' not found
+## [1] 1.571
 ```
+
+```r
 
 
 # thetaFromLengthsTest function
+```
 
 ```r
 thetaFromLengthsTest <- function(a, b, theta) {
-    
-    return()
+    thetaFromLengths(a, b, lawOfCosines(a, b, theta)) - theta
 }
+
+
+# Test
 ```
 
+```r
+thetaFromLengthsTest(13, 84, 0)
+```
+
+```
+## [1] 0
+```
 
 # Graphics
 ## canvas funtion
