@@ -4,11 +4,10 @@ Tool Tips
 # formatWord Function
 ```{r}
 formatWord <- function(word, translation, class){
-  word <-
-  translation <- 
-  class <- 
-  
-  return(word, translation, class)
+  if (is.na(translation) ==TRUE)
+  return(as.character(word)) else{
+    paste("<span class=", "'", class, "'", " ","title=", "'", translation, "'", ">", word, "</span>", sep = "")
+  }
   }
 ```
 
@@ -17,25 +16,23 @@ formatWord <- function(word, translation, class){
 formatWord("Hello", "hi there!", class = "hiword")
 ```
 
-
-cat(formatWord("Hello", "hi there!", class = "hiword"), "to", "all", "of", "you", 
-    "in", formatWord("Television Land.", "TV viewers", class = "hiword"))
+```{r results='asis'}
+cat(formatWord("Hello", "hi there!", "hiword"), "to", "all", "of", "you", 
+    "in", formatWord("Television Land.", "TV viewers", "hiword")) 
+```
 
 # Your Task 
-## 1
+
 ```{r}
 
 ```
 
-## 2
+
 ```{r}
 
 ```
 
-## Test Statement
 
-
-## 3
 ```{r}
 
 ```
