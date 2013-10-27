@@ -187,9 +187,17 @@ hljs.initHighlightingOnLoad();
 
 <h2>Crossword helper function</h2>
 
-<pre><code class="r">crossword &lt;- function(x) {
-
+<pre><code class="r">crossword &lt;- function(expression) {
+    words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+    analyze &lt;- grepl(expression, words)
+    return(words[analyze])
 }
+</code></pre>
+
+<pre><code class="r">crossword(&quot;^c.r$&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;car&quot; &quot;cur&quot;
 </code></pre>
 
 <h2>Crossword Pattern function</h2>

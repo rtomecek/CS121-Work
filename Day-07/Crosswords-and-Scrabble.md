@@ -9,11 +9,22 @@
 ## Crossword helper function
 
 ```r
-crossword <- function(x) {
-    
+crossword <- function(expression) {
+    words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+    analyze <- grepl(expression, words)
+    return(words[analyze])
 }
 ```
 
+
+
+```r
+crossword("^c.r$")
+```
+
+```
+## [1] "car" "cur"
+```
 
 
 ## Crossword Pattern function
