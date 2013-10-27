@@ -220,20 +220,14 @@ Scrambler &lt;- function(word) {
 Scrambler(&quot;hello&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;lolhe&quot;
+<pre><code>## [1] &quot;hoell&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
 
 <pre><code class="r"># Definition Here
 VowelBleeper &lt;- function(word) {
-    letters &lt;- (strsplit(word, &quot;&quot;))
-    a &lt;- &quot;*&quot;
-    e &lt;- &quot;*&quot;
-    i &lt;- &quot;*&quot;
-    o &lt;- &quot;*&quot;
-    u &lt;- &quot;*&quot;
-    paste(letters, collapse = )
+    gsub(&quot;[aeiouAEIOU]&quot;, &quot;*&quot;, word)
 }
 </code></pre>
 
@@ -241,29 +235,81 @@ VowelBleeper &lt;- function(word) {
 VowelBleeper(&quot;computer&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;c(\&quot;c\&quot;, \&quot;o\&quot;, \&quot;m\&quot;, \&quot;p\&quot;, \&quot;u\&quot;, \&quot;t\&quot;, \&quot;e\&quot;, \&quot;r\&quot;)&quot;
+<pre><code>## [1] &quot;c*mp*t*r&quot;
 </code></pre>
 
 <pre><code class="r">VowelBleeper(&quot;higher&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;c(\&quot;h\&quot;, \&quot;i\&quot;, \&quot;g\&quot;, \&quot;h\&quot;, \&quot;e\&quot;, \&quot;r\&quot;)&quot;
+<pre><code>## [1] &quot;h*gh*r&quot;
 </code></pre>
 
 <pre><code class="r">VowelBleeper(&quot;cat&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;c(\&quot;c\&quot;, \&quot;a\&quot;, \&quot;t\&quot;)&quot;
+<pre><code>## [1] &quot;c*t&quot;
+</code></pre>
+
+<pre><code class="r">VowelBleeper(&quot;Art&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;*rt&quot;
 </code></pre>
 
 <h2>L33t</h2>
 
-<pre><code class="r">L33t &lt;- function() {
-
+<pre><code class="r">L33t &lt;- function(word) {
+    one &lt;- gsub(&quot;[Ee]&quot;, &quot;3&quot;, word)
+    two &lt;- gsub(&quot;[Oo]&quot;, &quot;0&quot;, one)
+    three &lt;- gsub(&quot;[Aa]&quot;, &quot;4&quot;, two)
+    four &lt;- gsub(&quot;[Ll]&quot;, &quot;1&quot;, three)
+    gsub(&quot;[Ss]&quot;, 5, four)
 }
 </code></pre>
 
 <pre><code class="r"># Test Statements
+L33t(&quot;People at Macalester are awesome&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;P30p13 4t M4c4135t3r 4r3 4w350m3&quot;
+</code></pre>
+
+<pre><code class="r">L33t(&quot;Larry likes lemons&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;14rry 1ik35 13m0n5&quot;
+</code></pre>
+
+<h2>Sets of Words</h2>
+
+<pre><code class="r"># Reverser
+Reverser &lt;- function(word) {
+    reverser &lt;- function(word) {
+        letters &lt;- (strsplit(word, &quot;&quot;))
+        x &lt;- rev(letters[[1]])
+        paste(x, collapse = &quot;&quot;)
+    }
+    sapply(word, reverser)
+}
+</code></pre>
+
+<pre><code class="r"># Test Statements
+Reverser(c(&quot;dog&quot;, &quot;cat&quot;))
+</code></pre>
+
+<pre><code>##   dog   cat 
+## &quot;god&quot; &quot;tac&quot;
+</code></pre>
+
+<pre><code class="r"># Scrambler
+
+</code></pre>
+
+<pre><code class="r"># VowelBleeper
+
+</code></pre>
+
+<pre><code class="r"># L33t
 
 </code></pre>
 

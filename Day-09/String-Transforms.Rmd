@@ -39,13 +39,7 @@ Scrambler("hello")
 ```{r}
 # Definition Here
 VowelBleeper <- function(word){
-  letters <- (strsplit(word,""))
-  a <- "*"
-  e <- "*"
-  i <- "*"
-  o <- "*"
-  u <- "*"
-  paste(letters,collapse=)
+ gsub("[aeiouAEIOU]","*", word)
   }
 ```
 
@@ -54,17 +48,59 @@ VowelBleeper <- function(word){
 VowelBleeper("computer")
 VowelBleeper("higher")
 VowelBleeper("cat")
+VowelBleeper("Art")
 ```
 
 ## L33t 
 ```{r}
-L33t <- function(){
-
+L33t <- function(word){
+  one <- gsub("[Ee]","3", word)
+  two <- gsub( "[Oo]", "0", one)
+  three <- gsub("[Aa]", "4", two)
+  four <- gsub("[Ll]", "1", three)
+  gsub("[Ss]", 5, four)
   }
 ```
 
 ```{r}
 # Test Statements
+L33t("People at Macalester are awesome")
+L33t("Larry likes lemons")
+```
+
+## Sets of Words
+```{r}
+# Reverser
+Reverser <- function(word){
+reverser <- function(word){
+  letters <- (strsplit(word,""))
+  x<- rev(letters[[1]])
+  paste(x,collapse="")
+  }
+sapply(word,reverser)
+}
+```
+
+```{r}
+# Test Statements
+Reverser(c("dog", "cat"))
+```
+
+```{r}
+# Scrambler
 
 
 ```
+
+```{r}
+# VowelBleeper
+
+```
+
+```{r}
+# L33t
+
+```
+
+
+
