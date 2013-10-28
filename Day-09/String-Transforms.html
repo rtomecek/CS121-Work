@@ -183,8 +183,7 @@ hljs.initHighlightingOnLoad();
 
 <h2>Reverser</h2>
 
-<pre><code class="r"># Definition here:
-reverser &lt;- function(word) {
+<pre><code class="r">reverser &lt;- function(word) {
     letters &lt;- (strsplit(word, &quot;&quot;))
     x &lt;- rev(letters[[1]])
     paste(x, collapse = &quot;&quot;)
@@ -208,8 +207,7 @@ reverser(&quot;computer&quot;)
 
 <h2>Scrambler</h2>
 
-<pre><code class="r"># Definition Here
-Scrambler &lt;- function(word) {
+<pre><code class="r">Scrambler &lt;- function(word) {
     letters &lt;- (strsplit(word, &quot;&quot;))
     x &lt;- sample(letters[[1]])
     paste(x, collapse = &quot;&quot;)
@@ -220,7 +218,7 @@ Scrambler &lt;- function(word) {
 Scrambler(&quot;hello&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;hoell&quot;
+<pre><code>## [1] &quot;hloel&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
@@ -263,7 +261,8 @@ VowelBleeper(&quot;computer&quot;)
     two &lt;- gsub(&quot;[Oo]&quot;, &quot;0&quot;, one)
     three &lt;- gsub(&quot;[Aa]&quot;, &quot;4&quot;, two)
     four &lt;- gsub(&quot;[Ll]&quot;, &quot;1&quot;, three)
-    gsub(&quot;[Ss]&quot;, 5, four)
+    five &lt;- gsub(&quot;[Gg]&quot;, &quot;9&quot;, four)
+    gsub(&quot;[Ss]&quot;, &quot;5&quot;, five)
 }
 </code></pre>
 
@@ -302,7 +301,22 @@ Reverser(c(&quot;dog&quot;, &quot;cat&quot;))
 </code></pre>
 
 <pre><code class="r"># Scrambler
+scrambler &lt;- function(word) {
+    Scrambler &lt;- function(word) {
+        letters &lt;- (strsplit(word, &quot;&quot;))
+        x &lt;- sample(letters[[1]])
+        paste(x, collapse = &quot;&quot;)
+    }
+    sapply(word, Scrambler)
+}
+</code></pre>
 
+<pre><code class="r"># Test Statements
+scrambler(c(&quot;hello&quot;, &quot;cowboy&quot;))
+</code></pre>
+
+<pre><code>##    hello   cowboy 
+##  &quot;olhle&quot; &quot;cowbyo&quot;
 </code></pre>
 
 <pre><code class="r"># VowelBleeper

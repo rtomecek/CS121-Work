@@ -4,7 +4,6 @@
 
 
 ```r
-# Definition here:
 reverser <- function(word) {
     letters <- (strsplit(word, ""))
     x <- rev(letters[[1]])
@@ -37,7 +36,6 @@ reverser("cat")
 
 
 ```r
-# Definition Here
 Scrambler <- function(word) {
     letters <- (strsplit(word, ""))
     x <- sample(letters[[1]])
@@ -53,7 +51,7 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "hoell"
+## [1] "hloel"
 ```
 
 
@@ -111,7 +109,8 @@ L33t <- function(word) {
     two <- gsub("[Oo]", "0", one)
     three <- gsub("[Aa]", "4", two)
     four <- gsub("[Ll]", "1", three)
-    gsub("[Ss]", 5, four)
+    five <- gsub("[Gg]", "9", four)
+    gsub("[Ss]", "5", five)
 }
 ```
 
@@ -165,7 +164,26 @@ Reverser(c("dog", "cat"))
 
 ```r
 # Scrambler
+scrambler <- function(word) {
+    Scrambler <- function(word) {
+        letters <- (strsplit(word, ""))
+        x <- sample(letters[[1]])
+        paste(x, collapse = "")
+    }
+    sapply(word, Scrambler)
+}
+```
 
+
+
+```r
+# Test Statements
+scrambler(c("hello", "cowboy"))
+```
+
+```
+##    hello   cowboy 
+##  "olhle" "cowbyo"
 ```
 
 
