@@ -4,8 +4,16 @@
 ## Outlier function
 ```{r}
 outlier <- function(x){
-  
-  return(x)
+  v <- quantile(x)
+  one <- v[[2]]
+  two <- v[[4]]
+  for (k in 0:length(x)){
+    if (one<x[k])
+      return(TRUE)
+    if (x[k]<two)
+      return(TRUE)
+    }
+  else (return(FALSE))
   }
 ```
 
