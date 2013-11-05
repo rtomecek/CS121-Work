@@ -34,7 +34,6 @@ reverser("cat")
 
 ## Scrambler
 
-
 ```r
 Scrambler <- function(word) {
     letters <- (strsplit(word, ""))
@@ -51,12 +50,11 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "hloel"
+## [1] "llheo"
 ```
 
 
 ## VowelBleeper
-
 
 ```r
 # Definition Here
@@ -183,23 +181,59 @@ scrambler(c("hello", "cowboy"))
 
 ```
 ##    hello   cowboy 
-##  "olhle" "cowbyo"
+##  "lehlo" "wcbooy"
 ```
 
 
 
 ```r
 # VowelBleeper
+vowelbleeper <- function(word) {
+    VowelBleeper <- function(word) {
+        gsub("[aeiouAEIOU]", "*", word)
+    }
+    sapply(word, vowelbleeper)
+}
+```
 
+
+
+```r
+# Test Statements
+vowelbleeper("elephant", "cartoon")
+```
+
+```
+## Error: unused argument ("cartoon")
 ```
 
 
 
 ```r
 # L33t
-
+Leet <- function(word) {
+    L33t <- function(word) {
+        one <- gsub("[Ee]", "3", word)
+        two <- gsub("[Oo]", "0", one)
+        three <- gsub("[Aa]", "4", two)
+        four <- gsub("[Ll]", "1", three)
+        five <- gsub("[Gg]", "9", four)
+        gsub("[Ss]", "5", five)
+    }
+    sapply(word, L33t)
+}
 ```
 
+
+
+```r
+# Test Statements
+Leet("submarine", "elephant")
+```
+
+```
+## Error: unused argument ("elephant")
+```
 
 
 
