@@ -1,4 +1,66 @@
 Image Cropping
 ========================================================
 
+
+
+```{r}
 puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Resources/Images/mindo.png"))
+dim(puppy)
+```
+
+
+## Mindo's Face
+```{r}
+
+
+```
+
+
+## Mindo's Left Front Paw
+```{r}
+
+
+```
+
+
+## Mindo's Dog Tag
+```{r}
+
+
+```
+
+
+
+## Inital Framing Task Function
+```{r}
+
+
+```
+
+## Matching color frame function
+```{r}
+
+
+```
+
+## Negative frame function
+```{r}
+
+
+```
+
+## Another function? MAYBE
+```{r}
+
+
+```
+
+## Mirror border function
+```{r}
+
+
+```
+
+
+
+
