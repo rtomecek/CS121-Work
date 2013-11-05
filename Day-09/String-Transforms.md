@@ -1,7 +1,7 @@
-# Oct 1, 2013
+String Transforms
+===============================
 
 ## Reverser
-
 
 ```r
 reverser <- function(word) {
@@ -12,7 +12,6 @@ reverser <- function(word) {
 ```
 
 
-Test Statements
 
 ```r
 # Test Statements
@@ -50,7 +49,7 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "lhleo"
+## [1] "ohlle"
 ```
 
 
@@ -181,7 +180,7 @@ scrambler(c("hello", "cowboy"))
 
 ```
 ##    hello   cowboy 
-##  "lhleo" "obwoyc"
+##  "loehl" "cbywoo"
 ```
 
 

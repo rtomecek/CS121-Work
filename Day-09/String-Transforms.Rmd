@@ -1,7 +1,7 @@
-# Oct 1, 2013
+String Transforms
+===============================
 
 ## Reverser
-
 ```{r}
 reverser <- function(word){
   letters <- (strsplit(word,""))
@@ -10,7 +10,6 @@ reverser <- function(word){
 }
 ```
 
-Test Statements
 ```{r}
 # Test Statements
 reverser("computer")
@@ -71,7 +70,7 @@ L33t("Larry likes lemons")
 Reverser <- function(word){
 reverser <- function(word){
   letters <- (strsplit(word,""))
-  x<- rev(letters[[1]])
+  x <- rev(letters[[1]])
   paste(x,collapse="")
   }
 sapply(word,reverser)
