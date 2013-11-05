@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>October 31st notes - Day-17</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>October 31st notes - Day-17</h1>
+
+<h1>Utility Functions</h1>
+
+<p>planebind &lt;- function(red,green,blue){
+  array(c(red,green,blue), dim=c(dim(red)[1],dim(red)[2],3)) 
+}</p>
+
+<p>ShowImage &lt;- function(image){
+  size &lt;- dim(image)
+  canvas(x=c(1,size[2]), y=c(1,size[1]),asp=1,)
+  rasterImage(image,1,1,size[2],size[1])</p>
+
+<h1></h1>
+
+<p>colorPlane &lt;- function(npixels=50,howMuchBlue=.5){</p>
+
+<p>npixels &lt;- 50
+howMuchBlue &lt;- .5</p>
+
+<p>x &lt;- seq(0,1, length=npixels)</p>
+
+<h1>initialize state</h1>
+
+<p>red &lt;- matrix(0, nrow=npixels, ncol=npixels)
+for(k in 1:npixels){</p>
+
+<h1>update</h1>
+
+<p>red[ ,k] &lt;- cbind(x)
+  }
+green &lt;- matrix(0, nrow=npixels, ncol=npixels)
+for(k in 1:npixels){</p>
+
+<h1>update</h1>
+
+<p>green[k, ] &lt;- rbind(x)
+  }</p>
+
+<p>blue &lt;- matrix(howMuchBlue, nrow=npixels, ncol=npixels)</p>
+
+<p>return(planeBind(red,green,blue))
+ }</p>
+
+<h1></h1>
+
+<h1>Spot the Difference</h1>
+
+<p>puzzleURL &lt;- &#39;<a href="http://www.vistax64.com/attachments/chillout-room/9404d1231736689-spot-difference-spot02-c.jpg">http://www.vistax64.com/attachments/chillout-room/9404d1231736689-spot-difference-spot02-c.jpg</a>&#39;
+puzzle &lt;- readJPEG( getURLContent( puzzleURL ) ) </p>
+
+<h2>Subtract Statagey for Spot the difference</h2>
+
+<p>spotDiff &lt;- function(lfet,right){
+  abs(left - right)
+}</p>
+
+<p>readImageURL &lt;- function(URL){
+  isJPEG &lt;- grepl(&ldquo;[.jpg$ | .jpeg$]&rdquo;,URL)
+  if(isJPEG) 
+    image &lt;- readJPEG(getURLContent(URL))
+    else
+  image &lt;- readPNG(getURLContent(URL))
+}</p>
+
+<p>splitThePuzzle &lt;- function(puzzle){
+  sz &lt;- dim(puzzle)
+  mid &lt;- sz[2]/2
+  left &lt;- puzzle[,1:mid,]
+  right &lt;- puzzle[,(mid+1):sz[2],]
+  return(list(left=left, right=right))
+}</p>
+
+<h1></h1>
+
+<p>From collaborator</p>
+
+<p>puzzle &lt;- readJPEG( getURLContent( puzzleURL ) )</p>
+
+<h1>===============</h1>
+
+<p>readImageURL &lt;- function(URL){
+  isJPEG &lt;- grepl(&ldquo;[.jpg$|.jpeg$]&rdquo;,URL)</p>
+
+<p>if( isJPEG ) 
+   image &lt;- readJPEG(getURLContent(URL))
+    else
+   image&lt;- readPNG(getURLContent(URL))</p>
+
+<p>}
+ readImageURL(puzzleURL)</p>
+
+<h1>===============</h1>
+
+<p>splitThePuzzle &lt;- function(puzzle) {
+  sz &lt;- dim(puzzle)
+  mid &lt;- sz[2]/2
+  left &lt;- puzzle[,1:mid,]
+  right &lt;- puzzle[,(mid+1):sz[2],]
+  return( list(left=left, right=right ) )
+  }</p>
+
+<h1>================</h1>
+
+<h1>Generate a plane of colors</h1>
+
+<h2>Utility Functions</h2>
+
+<p>ShowImage &lt;- function(image){
+ size &lt;- dim(image) 
+ canvas(x=c(1,size[2]), y=c(1,size[1]), asp=1)
+ rasterImage(image,1,1,size[2],size[1]) 
+ } </p>
+
+<p>planeBind &lt;- function(red,green,blue){
+  array(c(red,green,blue), 
+        dim&lt;-c(dim(red)[1],dim(red)[2],3) )
+}</p>
+
+<h1>==========================</h1>
+
+<p>colorPlane &lt;- function( npixels=50,
+                  howMuchBlue=.5) {</p>
+
+<p>x &lt;- seq(0,1,length=npixels)</p>
+
+<p>#initialize state
+red &lt;- matrix(0, nrow=npixels, ncol=npixels)
+for (k in 1:npixels){
+  # update
+  red[,k ] &lt;- cbind(x)
+}</p>
+
+<p>green &lt;- matrix(0, nrow=npixels, ncol=npixels)
+for (k in 1:npixels){
+    green[k, ] &lt;- rbind(x)
+}</p>
+
+<p>blue &lt;- matrix(howMuchBlue, 
+               nrow=npixels,
+               ncol=npixels)</p>
+
+<p>return(planeBind(red,green,blue)) 
+}</p>
+
+<p>ShowImage(colorPlane(howMuchBlue=1,npixels=50))</p>
+
+</body>
+
+</html>
+
