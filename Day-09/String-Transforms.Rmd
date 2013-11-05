@@ -106,13 +106,13 @@ vowelbleeper <- function(word){
 VowelBleeper <- function(word){
  gsub("[aeiouAEIOU]","*", word)
   }
-  sapply(word,vowelbleeper)
+  sapply(word,VowelBleeper)
   }
 ```
 
 ```{r}
 # Test Statements
-vowelbleeper("elephant","cartoon")
+vowelbleeper(c("elephant","cartoon"))
 ```
 
 ```{r}
@@ -132,7 +132,7 @@ sapply(word,L33t)
 
 ```{r}
 # Test Statements
-Leet("submarine", "elephant")
+Leet(c("submarine", "elephant"))
 ```
 
 

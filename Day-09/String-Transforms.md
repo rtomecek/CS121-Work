@@ -50,7 +50,7 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "llheo"
+## [1] "lhleo"
 ```
 
 
@@ -181,7 +181,7 @@ scrambler(c("hello", "cowboy"))
 
 ```
 ##    hello   cowboy 
-##  "lehlo" "wcbooy"
+##  "lhleo" "obwoyc"
 ```
 
 
@@ -192,7 +192,7 @@ vowelbleeper <- function(word) {
     VowelBleeper <- function(word) {
         gsub("[aeiouAEIOU]", "*", word)
     }
-    sapply(word, vowelbleeper)
+    sapply(word, VowelBleeper)
 }
 ```
 
@@ -200,11 +200,12 @@ vowelbleeper <- function(word) {
 
 ```r
 # Test Statements
-vowelbleeper("elephant", "cartoon")
+vowelbleeper(c("elephant", "cartoon"))
 ```
 
 ```
-## Error: unused argument ("cartoon")
+##   elephant    cartoon 
+## "*l*ph*nt"  "c*rt**n"
 ```
 
 
@@ -228,11 +229,12 @@ Leet <- function(word) {
 
 ```r
 # Test Statements
-Leet("submarine", "elephant")
+Leet(c("submarine", "elephant"))
 ```
 
 ```
-## Error: unused argument ("elephant")
+##   submarine    elephant 
+## "5ubm4rin3"  "313ph4nt"
 ```
 
 

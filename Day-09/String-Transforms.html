@@ -218,7 +218,7 @@ reverser(&quot;computer&quot;)
 Scrambler(&quot;hello&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;llheo&quot;
+<pre><code>## [1] &quot;lhleo&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
@@ -316,7 +316,7 @@ scrambler(c(&quot;hello&quot;, &quot;cowboy&quot;))
 </code></pre>
 
 <pre><code>##    hello   cowboy 
-##  &quot;lehlo&quot; &quot;wcbooy&quot;
+##  &quot;lhleo&quot; &quot;obwoyc&quot;
 </code></pre>
 
 <pre><code class="r"># VowelBleeper
@@ -324,15 +324,16 @@ vowelbleeper &lt;- function(word) {
     VowelBleeper &lt;- function(word) {
         gsub(&quot;[aeiouAEIOU]&quot;, &quot;*&quot;, word)
     }
-    sapply(word, vowelbleeper)
+    sapply(word, VowelBleeper)
 }
 </code></pre>
 
 <pre><code class="r"># Test Statements
-vowelbleeper(&quot;elephant&quot;, &quot;cartoon&quot;)
+vowelbleeper(c(&quot;elephant&quot;, &quot;cartoon&quot;))
 </code></pre>
 
-<pre><code>## Error: unused argument (&quot;cartoon&quot;)
+<pre><code>##   elephant    cartoon 
+## &quot;*l*ph*nt&quot;  &quot;c*rt**n&quot;
 </code></pre>
 
 <pre><code class="r"># L33t
@@ -350,10 +351,11 @@ Leet &lt;- function(word) {
 </code></pre>
 
 <pre><code class="r"># Test Statements
-Leet(&quot;submarine&quot;, &quot;elephant&quot;)
+Leet(c(&quot;submarine&quot;, &quot;elephant&quot;))
 </code></pre>
 
-<pre><code>## Error: unused argument (&quot;elephant&quot;)
+<pre><code>##   submarine    elephant 
+## &quot;5ubm4rin3&quot;  &quot;313ph4nt&quot;
 </code></pre>
 
 </body>
