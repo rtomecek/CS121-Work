@@ -69,24 +69,13 @@ graphics::rasterImage(puppytag, 1, 1, 60, 195)
 ## Inital Framing Task Function
 
 ```r
-require(jpg)
-```
-
-```
-## Loading required package: jpg
-```
-
-```
-## Warning: there is no package called 'jpg'
-```
-
-```r
+require(png)
 require(RCurl)
-robert <- readPNG(getURLContent("http://www.chicagolandsoccer.net/boys%202011/2011%20boys%20photos/BEN%20v%20CARM/DPP_6267-002.JPG"))
-```
-
-```
-## Error: libpng error: Not a PNG file
+robert <- readPNG(getURLContent("http://icons.iconseeker.com/png/fullsize/fruity-apples/simple-apple.png"))
+framing <- function() {
+    
+    
+}
 ```
 
 

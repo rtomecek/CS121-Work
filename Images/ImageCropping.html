@@ -231,20 +231,13 @@ graphics::rasterImage(puppytag, 1, 1, 60, 195)
 
 <h2>Inital Framing Task Function</h2>
 
-<pre><code class="r">require(jpg)
-</code></pre>
+<pre><code class="r">require(png)
+require(RCurl)
+robert &lt;- readPNG(getURLContent(&quot;http://icons.iconseeker.com/png/fullsize/fruity-apples/simple-apple.png&quot;))
+framing &lt;- function() {
 
-<pre><code>## Loading required package: jpg
-</code></pre>
 
-<pre><code>## Warning: there is no package called &#39;jpg&#39;
-</code></pre>
-
-<pre><code class="r">require(RCurl)
-robert &lt;- readPNG(getURLContent(&quot;http://www.chicagolandsoccer.net/boys%202011/2011%20boys%20photos/BEN%20v%20CARM/DPP_6267-002.JPG&quot;))
-</code></pre>
-
-<pre><code>## Error: libpng error: Not a PNG file
+}
 </code></pre>
 
 <h2>Matching color frame function</h2>

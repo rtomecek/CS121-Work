@@ -34,11 +34,13 @@ graphics::rasterImage(puppytag,1,1,60,195 )
 
 ## Inital Framing Task Function
 ```{r}
-require(jpg)
+require(png)
 require(RCurl)
-robert <- readPNG(getURLContent("http://www.chicagolandsoccer.net/boys%202011/2011%20boys%20photos/BEN%20v%20CARM/DPP_6267-002.JPG"))
-framing <- function(){
-  
+robert <- readPNG(getURLContent("http://icons.iconseeker.com/png/fullsize/fruity-apples/simple-apple.png"))
+framing <- function(image, frame width, edge match the frame, lighten/darken image){
+
+COMP121::canvas(x=c(1, ),y=c(1, ),asp=1)
+graphics::rasterImage(robert,1,1, , )
   
   }
 ```
