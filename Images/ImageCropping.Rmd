@@ -1,40 +1,46 @@
 Image Cropping
 ========================================================
 
-
+```{r}
+require(png)
+require(RCurl)
+puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Resources/Images/mindo.png"))
+```
 
 ```{r}
-puppy <- readPNG(getURLContent("http://dtkaplan.github.io/ScientificComputing/Resources/Images/mindo.png"))
 dim(puppy)
 ```
 
-
 ## Mindo's Face
 ```{r}
-
-
+puppyface <- puppy[1:120,85:215,]
+COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
+graphics::rasterImage(puppyface,1,1,215,120)
 ```
-
 
 ## Mindo's Left Front Paw
 ```{r}
-
-
+puppypaw <- puppy[155:195,1:60,]
+COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
+graphics::rasterImage(puppypaw,1,1,65,190)
 ```
-
 
 ## Mindo's Dog Tag
 ```{r}
-
-
+puppytag <- puppy[120:145,90:140,]
+COMP121::canvas(x=c(1,220),y=c(1,220),asp=1)
+graphics::rasterImage(puppytag,1,1,60,195 )
 ```
-
-
 
 ## Inital Framing Task Function
 ```{r}
-
-
+require(jpg)
+require(RCurl)
+robert <- readPNG(getURLContent("http://www.chicagolandsoccer.net/boys%202011/2011%20boys%20photos/BEN%20v%20CARM/DPP_6267-002.JPG"))
+framing <- function(){
+  
+  
+  }
 ```
 
 ## Matching color frame function
