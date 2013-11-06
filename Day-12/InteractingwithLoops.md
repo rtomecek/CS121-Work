@@ -64,7 +64,6 @@ countdown(5)
 # Testing Human Response Times
 
 ```r
-
 getData <- function(N) {
     result <- rep(NA, N)
     for (k in 1:N) {
@@ -99,5 +98,17 @@ getData <- function(N) {
 ```
 
 
+
+```r
 load("RobertData.RData")
+```
+
+```
+## Warning: cannot open compressed file 'RobertData.RData', probable reason
+## 'No such file or directory'
+```
+
+```
+## Error: cannot open the connection
+```
 

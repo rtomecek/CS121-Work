@@ -41,7 +41,6 @@ countdown(5)
 
 # Testing Human Response Times
 ```{r}
-
 getData <- function(N){
 result <- rep(NA,N)
   for (k in 1:N){
@@ -73,5 +72,6 @@ return(result)
 }
 ```
 
+```{r}
 load("RobertData.RData")
-
+```
