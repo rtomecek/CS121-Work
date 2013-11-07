@@ -59,19 +59,25 @@ return(result)
 # Testing Human Response Times
 ```{r}
 getData <- function(N){
+  # Initialize State
+  readline("Press Return when you're ready to start: ")
+  result = numeric(N)
   for (k in 1:N){
+    # Modify the State
     before <- Sys.time()
     readline("Press Return:")
     after <- Sys.time()
     delay <- as.numeric(after-before)
     cat(rep("", 20))
-    result <- delay
+    result[k] <- delay
     Sys.sleep(runif(1, min=1, max=5))
   }
+  # Do something with the state
 return(result)
-}
+} 
 ```
 
 ```{r}
 load("RobertData.RData")
+RobertData
 ```

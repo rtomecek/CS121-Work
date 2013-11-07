@@ -251,27 +251,29 @@ hljs.initHighlightingOnLoad();
 <h1>Testing Human Response Times</h1>
 
 <pre><code class="r">getData &lt;- function(N) {
+    # Initialize State
+    readline(&quot;Press Return when you&#39;re ready to start: &quot;)
+    result = numeric(N)
     for (k in 1:N) {
+        # Modify the State
         before &lt;- Sys.time()
         readline(&quot;Press Return:&quot;)
         after &lt;- Sys.time()
         delay &lt;- as.numeric(after - before)
         cat(rep(&quot;&quot;, 20))
-        result &lt;- delay
+        result[k] &lt;- delay
         Sys.sleep(runif(1, min = 1, max = 5))
     }
+    # Do something with the state
     return(result)
 }
 </code></pre>
 
 <pre><code class="r">load(&quot;RobertData.RData&quot;)
+RobertData
 </code></pre>
 
-<pre><code>## Warning: cannot open compressed file &#39;RobertData.RData&#39;, probable reason
-## &#39;No such file or directory&#39;
-</code></pre>
-
-<pre><code>## Error: cannot open the connection
+<pre><code>##  [1] 0.7803 0.6313 0.3880 0.3509 0.5661 0.4270 0.3926 0.3701 0.6677 0.3905
 </code></pre>
 
 </body>

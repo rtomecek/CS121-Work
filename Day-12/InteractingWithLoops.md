@@ -84,15 +84,20 @@ getData <- function(N) {
 
 ```r
 getData <- function(N) {
+    # Initialize State
+    readline("Press Return when you're ready to start: ")
+    result = numeric(N)
     for (k in 1:N) {
+        # Modify the State
         before <- Sys.time()
         readline("Press Return:")
         after <- Sys.time()
         delay <- as.numeric(after - before)
         cat(rep("", 20))
-        result <- delay
+        result[k] <- delay
         Sys.sleep(runif(1, min = 1, max = 5))
     }
+    # Do something with the state
     return(result)
 }
 ```
@@ -101,14 +106,10 @@ getData <- function(N) {
 
 ```r
 load("RobertData.RData")
+RobertData
 ```
 
 ```
-## Warning: cannot open compressed file 'RobertData.RData', probable reason
-## 'No such file or directory'
-```
-
-```
-## Error: cannot open the connection
+##  [1] 0.7803 0.6313 0.3880 0.3509 0.5661 0.4270 0.3926 0.3701 0.6677 0.3905
 ```
 
