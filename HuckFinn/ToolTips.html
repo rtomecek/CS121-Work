@@ -186,35 +186,26 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">formatWord &lt;- function(word, translation, class) {
     if (is.na(translation) == TRUE) 
         return(as.character(word)) else {
-        paste(&quot;&lt;span class=&quot;, &quot;&#39;&quot;, class, &quot;&#39;&quot;, &quot; &quot;, &quot;title=&quot;, &quot;&#39;&quot;, translation, 
-            &quot;&#39;&quot;, &quot;&gt;&quot;, word, &quot;&lt;/span&gt;&quot;, sep = &quot;&quot;)
+        paste(&quot;&lt;span class=&#39;&quot;, class, &quot;&#39;, title=&#39;&quot;, translation, &quot;&#39;&gt;&quot;, word, 
+            &quot;&lt;/span&gt;&quot;)
     }
 }
 </code></pre>
 
 <h1>Test Case</h1>
 
-<pre><code class="r">formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, class = &quot;hiword&quot;)
+<pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, class = &quot;hiword&quot;))
 </code></pre>
 
-<pre><code>## [1] &quot;&lt;span class=&#39;hiword&#39; title=&#39;hi there!&#39;&gt;Hello&lt;/span&gt;&quot;
-</code></pre>
+<p><span class=' hiword ', title=' hi there! '> Hello </span></p>
 
 <pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, &quot;hiword&quot;), &quot;to&quot;, &quot;all&quot;, &quot;of&quot;, &quot;you&quot;, &quot;in&quot;, 
     formatWord(&quot;Television Land.&quot;, &quot;TV viewers&quot;, &quot;hiword&quot;))
 </code></pre>
 
-<p><span class='hiword' title='hi there!'>Hello</span> to all of you in <span class='hiword' title='TV viewers'>Television Land.</span></p>
+<p><span class=' hiword ', title=' hi there! '> Hello </span> to all of you in <span class=' hiword ', title=' TV viewers '> Television Land. </span></p>
 
 <h1>Your Task</h1>
-
-<h2>1</h2>
-
-<h2>2</h2>
-
-<h2>Test Statement</h2>
-
-<h2>3</h2>
 
 </body>
 

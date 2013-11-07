@@ -2,18 +2,18 @@ Tool Tips
 ========================================================
  
 # formatWord Function
-```{r}
+```{r results="asis"}
 formatWord <- function(word, translation, class){
   if (is.na(translation) ==TRUE)
   return(as.character(word)) else{
-    paste("<span class=", "'", class, "'", " ","title=", "'", translation, "'", ">", word, "</span>", sep = "")
+    paste("<span class='", class, "', title='", translation, "'>",  word, "</span>")
   }
   }
 ```
 
 # Test Case
-```{r}
-formatWord("Hello", "hi there!", class = "hiword")
+```{r results="asis"}
+cat(formatWord("Hello", "hi there!", class = "hiword"))
 ```
 
 ```{r results='asis'}
@@ -27,13 +27,4 @@ cat(formatWord("Hello", "hi there!", "hiword"), "to", "all", "of", "you",
 
 ```
 
-
-```{r}
-
-```
-
-
-```{r}
-
-```
 
