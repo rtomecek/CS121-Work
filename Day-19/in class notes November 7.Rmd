@@ -1,6 +1,46 @@
 November 7, 2013 Day-19 in class notes
 ========================================================
 
+look in class notes for november 7 on comp homepage (will be helpful)
+
+```{r}
+animalList <- list("Animals", list("Domesticated",list("Horse", "Cat", "Dog")) , list("Wild",list("Lion", "Tiger", "Bear", "Moose")))
+displayTree(animalList)
+```
+
+# Tree  of the World
+```{r}
+ourTree <- list("The World",
+  			list("Non-Continental", list("Fiji","New Zealand")),
+				list("Continental",
+               	  	  list("Africa", list("Ghana", "Kenya", "Morocco")),
+                      list("Americas",
+                      		list("North", list("Canada","Mexico")),
+                            list("South",list("Chile","Bolivia"))),
+                      list("Antarctica"),
+                      list("Asia", 
+                      		list("Thailand", "Bhutan", "Mongolia")),
+                      list("Australia"),
+					  list("Europe",
+                    		list("Slovakia", "Romania"))))
+```
+
+
+```{r}
+bootstrapPage <- list("STAR", list("A"),list("B","C"),
+                      list("D"), list("E", "F", "G", "H", list("I")))
+```
+
+Whole Page 
+  Title block
+    bit 1 of text
+    bit 2 of text
+  Row
+    Comment
+    Block 1
+      
+    Block 2
+    
 
 
 
@@ -9,3 +49,5 @@ November 7, 2013 Day-19 in class notes
 
 
 
+
+  
