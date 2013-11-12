@@ -4,6 +4,13 @@
 ## Outlier function
 ```{r}
 outlier <- function(x){
+ # State
+  x <- c(0:9)
+  
+# Update state
+  outlier <- quantile(x, probs = seq(0,.25,.75), na.rm = FALSE, names = TRUE)
+  
+  
   v <- quantile(x)
   one <- v[[2]]
   two <- v[[4]]
@@ -16,11 +23,13 @@ outlier <- function(x){
   else (return(FALSE))
   }
 ```
-
-
+## Test Case
+```{r}
+outlier()
+```
 ## Digit to Word function
 ```{r}
-digitToWord <- function(v){
+digitToWord <- function(x, y){
   
   }
 ```
@@ -28,10 +37,16 @@ digitToWord <- function(v){
 ## LettersMatch function
 ```{r}
 LettersMatch <- function(words,pattern){
-  
+  small <- c("first", "second","errand","arrest","are")
+  match <- grepl("^...$",small) # three letters long
+  return(match)
   }
 ```
 
+## Test Case
+```{r}
+LettersMatch()
+```
 ## piSeries function
 ```{r}
 piSeries <- function(n){
