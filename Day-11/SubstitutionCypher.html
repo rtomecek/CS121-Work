@@ -184,6 +184,7 @@ hljs.initHighlightingOnLoad();
 <h2>Step 1: Key</h2>
 
 <pre><code class="r">key &lt;- function(word) {
+    key &lt;- strsplit(word, NULL)
     1 &lt;- &quot;a&quot;
     2 &lt;- &quot;b&quot;
     3 &lt;- &quot;c&quot;
@@ -210,7 +211,7 @@ hljs.initHighlightingOnLoad();
     24 &lt;- &quot;x&quot;
     25 &lt;- &quot;y&quot;
     26 &lt;- &quot;z&quot;
-    return(word)
+    return(key)
 }
 </code></pre>
 

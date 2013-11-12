@@ -5,6 +5,7 @@ Substitution Cypher
 
 ```r
 key <- function(word) {
+    key <- strsplit(word, NULL)
     1 <- "a"
     2 <- "b"
     3 <- "c"
@@ -31,7 +32,7 @@ key <- function(word) {
     24 <- "x"
     25 <- "y"
     26 <- "z"
-    return(word)
+    return(key)
 }
 ```
 
