@@ -1,6 +1,11 @@
 Tool Tips
 ========================================================
  
+<style>
+.hiword {background:red}
+.lowword {background:blue}
+</style>
+ 
 # formatWord Function
 ```{r results="asis"}
 formatWord <- function(word, translation, class){
@@ -18,7 +23,7 @@ cat(formatWord("Hello", "hi there!", class = "hiword"))
 
 ```{r results='asis'}
 cat(formatWord("Hello", "hi there!", "hiword"), "to", "all", "of", "you", 
-    "in", formatWord("Television Land.", "TV viewers", "hiword")) 
+    "in", formatWord("Television Land.", "TV viewers", "lowword")) 
 ```
 
 # Your Task 

@@ -181,6 +181,12 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Tool Tips</h1>
 
+<style>
+.hiword {background:red}
+.lowword {background:blue}
+</style>
+ 
+
 <h1>formatWord Function</h1>
 
 <pre><code class="r">formatWord &lt;- function(word, translation, class) {
@@ -200,10 +206,10 @@ hljs.initHighlightingOnLoad();
 <p><span class=' hiword ', title=' hi there! '> Hello </span></p>
 
 <pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, &quot;hiword&quot;), &quot;to&quot;, &quot;all&quot;, &quot;of&quot;, &quot;you&quot;, &quot;in&quot;, 
-    formatWord(&quot;Television Land.&quot;, &quot;TV viewers&quot;, &quot;hiword&quot;))
+    formatWord(&quot;Television Land.&quot;, &quot;TV viewers&quot;, &quot;lowword&quot;))
 </code></pre>
 
-<p><span class=' hiword ', title=' hi there! '> Hello </span> to all of you in <span class=' hiword ', title=' TV viewers '> Television Land. </span></p>
+<p><span class=' hiword ', title=' hi there! '> Hello </span> to all of you in <span class=' lowword ', title=' TV viewers '> Television Land. </span></p>
 
 <h1>Your Task</h1>
 

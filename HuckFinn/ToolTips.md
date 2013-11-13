@@ -1,6 +1,11 @@
 Tool Tips
 ========================================================
  
+<style>
+.hiword {background:red}
+.lowword {background:blue}
+</style>
+ 
 # formatWord Function
 
 ```r
@@ -26,10 +31,10 @@ cat(formatWord("Hello", "hi there!", class = "hiword"))
 
 ```r
 cat(formatWord("Hello", "hi there!", "hiword"), "to", "all", "of", "you", "in", 
-    formatWord("Television Land.", "TV viewers", "hiword"))
+    formatWord("Television Land.", "TV viewers", "lowword"))
 ```
 
-<span class=' hiword ', title=' hi there! '> Hello </span> to all of you in <span class=' hiword ', title=' TV viewers '> Television Land. </span>
+<span class=' hiword ', title=' hi there! '> Hello </span> to all of you in <span class=' lowword ', title=' TV viewers '> Television Land. </span>
 
 
 # Your Task 
