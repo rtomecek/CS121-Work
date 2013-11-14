@@ -224,24 +224,21 @@ hljs.initHighlightingOnLoad();
 
 <h2>Step 4: Decryption</h2>
 
-<pre><code class="r">decrypt &lt;- function(keyword, message) {
+<pre><code class="r">decrypt &lt;- function(message, keyword) {
     cSet &lt;- (c(letters, LETTERS, &quot;.&quot;, &quot;?&quot;, &quot;!&quot;, &quot; &quot;))
     set.seed(key(keyword))
     code &lt;- sample(cSet)
     open &lt;- paste(cSet, collapse = &quot;&quot;)
     close &lt;- paste(code, collapse = &quot;&quot;)
-    telegram &lt;- chartr(open, close, message)
+    telegram &lt;- chartr(close, open, message)
     return(telegram)
 }
 </code></pre>
 
-<pre><code class="r">decrypt(&quot;The enemy attacked&quot;, &quot;hello&quot;)
+<pre><code class="r">decrypt(&quot;eIvNvhva!Njlljb?vX&quot;, &quot;hello&quot;)
 </code></pre>
 
-<pre><code>## Warning: NAs introduced by coercion
-</code></pre>
-
-<pre><code>## Error: supplied seed is not a valid integer
+<pre><code>## [1] &quot;The enemy attacked&quot;
 </code></pre>
 
 </body>

@@ -55,13 +55,13 @@ encrypt("hello", "The enemy attacked")
 ## Step 4: Decryption 
 
 ```r
-decrypt <- function(keyword, message) {
+decrypt <- function(message, keyword) {
     cSet <- (c(letters, LETTERS, ".", "?", "!", " "))
     set.seed(key(keyword))
     code <- sample(cSet)
     open <- paste(cSet, collapse = "")
     close <- paste(code, collapse = "")
-    telegram <- chartr(open, close, message)
+    telegram <- chartr(close, open, message)
     return(telegram)
 }
 ```
@@ -69,14 +69,10 @@ decrypt <- function(keyword, message) {
 
 
 ```r
-decrypt("The enemy attacked", "hello")
+decrypt("eIvNvhva!Njlljb?vX", "hello")
 ```
 
 ```
-## Warning: NAs introduced by coercion
-```
-
-```
-## Error: supplied seed is not a valid integer
+## [1] "The enemy attacked"
 ```
 
