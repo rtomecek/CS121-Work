@@ -5,34 +5,14 @@ Substitution Cypher
 
 ```r
 key <- function(word) {
-    key <- strsplit(word, NULL)
-    1 <- "a"
-    2 <- "b"
-    3 <- "c"
-    4 <- "d"
-    5 <- "e"
-    6 <- "f"
-    7 <- "g"
-    8 <- "h"
-    9 <- "i"
-    10 <- "j"
-    11 <- "k"
-    12 <- "l"
-    13 <- "m"
-    14 <- "n"
-    15 <- "o"
-    16 <- "p"
-    17 <- "q'"
-    18 <- "r"
-    19 <- "s"
-    20 <- "t"
-    21 <- "u"
-    22 <- "v"
-    23 <- "w"
-    24 <- "x"
-    25 <- "y"
-    26 <- "z"
-    return(key)
+    key <- unlist(strsplit(tolower(word), NULL))
+    res = character(0)
+    for (k in 1:length(key)) {
+        num <- which(key[k] == letters)
+        res <- c(res, num)
+    }
+    res <- paste(res, collapse = "")
+    return(as.numeric(res))
 }
 ```
 
@@ -43,17 +23,60 @@ key("soccer")
 ```
 
 ```
-## Error: invalid (do_set) left-hand side to assignment
+## [1] 191533518
 ```
 
-## Step 2: The Cypher
+
+## Step 2: The Cypher: Encrypt
+
+```r
+encrypt <- function(keyword, message) {
+    cSet <- (c(letters, LETTERS, ".", "?", "!", " "))
+    set.seed(key(keyword))
+    code <- sample(cSet)
+    open <- paste(cSet, collapse = "")
+    close <- paste(code, collapse = "")
+    telegram <- chartr(open, close, message)
+    return(telegram)
+}
+```
 
 
 
-## Step 3: Encryption
+```r
+encrypt("hello", "The enemy attacked")
+```
+
+```
+## [1] "eIvNvhva!Njlljb?vX"
+```
+
+
+## Step 4: Decryption 
+
+```r
+decrypt <- function(keyword, message) {
+    cSet <- (c(letters, LETTERS, ".", "?", "!", " "))
+    set.seed(key(keyword))
+    code <- sample(cSet)
+    open <- paste(cSet, collapse = "")
+    close <- paste(code, collapse = "")
+    telegram <- chartr(open, close, message)
+    return(telegram)
+}
+```
 
 
 
-## Step 4: Decryption (use rev() on step 3?)
+```r
+decrypt("The enemy attacked", "hello")
+```
 
+```
+## Warning: NAs introduced by coercion
+```
+
+```
+## Error: supplied seed is not a valid integer
+```
 

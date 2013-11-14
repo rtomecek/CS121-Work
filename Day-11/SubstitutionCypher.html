@@ -184,34 +184,14 @@ hljs.initHighlightingOnLoad();
 <h2>Step 1: Key</h2>
 
 <pre><code class="r">key &lt;- function(word) {
-    key &lt;- strsplit(word, NULL)
-    1 &lt;- &quot;a&quot;
-    2 &lt;- &quot;b&quot;
-    3 &lt;- &quot;c&quot;
-    4 &lt;- &quot;d&quot;
-    5 &lt;- &quot;e&quot;
-    6 &lt;- &quot;f&quot;
-    7 &lt;- &quot;g&quot;
-    8 &lt;- &quot;h&quot;
-    9 &lt;- &quot;i&quot;
-    10 &lt;- &quot;j&quot;
-    11 &lt;- &quot;k&quot;
-    12 &lt;- &quot;l&quot;
-    13 &lt;- &quot;m&quot;
-    14 &lt;- &quot;n&quot;
-    15 &lt;- &quot;o&quot;
-    16 &lt;- &quot;p&quot;
-    17 &lt;- &quot;q&#39;&quot;
-    18 &lt;- &quot;r&quot;
-    19 &lt;- &quot;s&quot;
-    20 &lt;- &quot;t&quot;
-    21 &lt;- &quot;u&quot;
-    22 &lt;- &quot;v&quot;
-    23 &lt;- &quot;w&quot;
-    24 &lt;- &quot;x&quot;
-    25 &lt;- &quot;y&quot;
-    26 &lt;- &quot;z&quot;
-    return(key)
+    key &lt;- unlist(strsplit(tolower(word), NULL))
+    res = character(0)
+    for (k in 1:length(key)) {
+        num &lt;- which(key[k] == letters)
+        res &lt;- c(res, num)
+    }
+    res &lt;- paste(res, collapse = &quot;&quot;)
+    return(as.numeric(res))
 }
 </code></pre>
 
@@ -220,14 +200,49 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">key(&quot;soccer&quot;)
 </code></pre>
 
-<pre><code>## Error: invalid (do_set) left-hand side to assignment
+<pre><code>## [1] 191533518
 </code></pre>
 
-<h2>Step 2: The Cypher</h2>
+<h2>Step 2: The Cypher: Encrypt</h2>
 
-<h2>Step 3: Encryption</h2>
+<pre><code class="r">encrypt &lt;- function(keyword, message) {
+    cSet &lt;- (c(letters, LETTERS, &quot;.&quot;, &quot;?&quot;, &quot;!&quot;, &quot; &quot;))
+    set.seed(key(keyword))
+    code &lt;- sample(cSet)
+    open &lt;- paste(cSet, collapse = &quot;&quot;)
+    close &lt;- paste(code, collapse = &quot;&quot;)
+    telegram &lt;- chartr(open, close, message)
+    return(telegram)
+}
+</code></pre>
 
-<h2>Step 4: Decryption (use rev() on step 3?)</h2>
+<pre><code class="r">encrypt(&quot;hello&quot;, &quot;The enemy attacked&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;eIvNvhva!Njlljb?vX&quot;
+</code></pre>
+
+<h2>Step 4: Decryption</h2>
+
+<pre><code class="r">decrypt &lt;- function(keyword, message) {
+    cSet &lt;- (c(letters, LETTERS, &quot;.&quot;, &quot;?&quot;, &quot;!&quot;, &quot; &quot;))
+    set.seed(key(keyword))
+    code &lt;- sample(cSet)
+    open &lt;- paste(cSet, collapse = &quot;&quot;)
+    close &lt;- paste(code, collapse = &quot;&quot;)
+    telegram &lt;- chartr(open, close, message)
+    return(telegram)
+}
+</code></pre>
+
+<pre><code class="r">decrypt(&quot;The enemy attacked&quot;, &quot;hello&quot;)
+</code></pre>
+
+<pre><code>## Warning: NAs introduced by coercion
+</code></pre>
+
+<pre><code>## Error: supplied seed is not a valid integer
+</code></pre>
 
 </body>
 
