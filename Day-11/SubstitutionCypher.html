@@ -181,7 +181,7 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Substitution Cypher</h1>
 
-<h2>Step 1: Key</h2>
+<h2>Key</h2>
 
 <pre><code class="r">key &lt;- function(word) {
     key &lt;- unlist(strsplit(tolower(word), NULL))
@@ -203,7 +203,7 @@ hljs.initHighlightingOnLoad();
 <pre><code>## [1] 191533518
 </code></pre>
 
-<h2>Step 2: The Cypher: Encrypt</h2>
+<h2>The Cypher/Encryption</h2>
 
 <pre><code class="r">encrypt &lt;- function(keyword, message) {
     cSet &lt;- (c(letters, LETTERS, &quot;.&quot;, &quot;?&quot;, &quot;!&quot;, &quot; &quot;))
@@ -222,7 +222,7 @@ hljs.initHighlightingOnLoad();
 <pre><code>## [1] &quot;eIvNvhva!Njlljb?vX&quot;
 </code></pre>
 
-<h2>Step 4: Decryption</h2>
+<h2>Decryption</h2>
 
 <pre><code class="r">decrypt &lt;- function(message, keyword) {
     cSet &lt;- (c(letters, LETTERS, &quot;.&quot;, &quot;?&quot;, &quot;!&quot;, &quot; &quot;))

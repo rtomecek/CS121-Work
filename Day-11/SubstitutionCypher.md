@@ -1,7 +1,7 @@
 Substitution Cypher
 ========================================================
 
-## Step 1: Key
+## Key
 
 ```r
 key <- function(word) {
@@ -16,6 +16,7 @@ key <- function(word) {
 }
 ```
 
+
 ## Test Case
 
 ```r
@@ -27,7 +28,7 @@ key("soccer")
 ```
 
 
-## Step 2: The Cypher: Encrypt
+## The Cypher/Encryption
 
 ```r
 encrypt <- function(keyword, message) {
@@ -52,7 +53,7 @@ encrypt("hello", "The enemy attacked")
 ```
 
 
-## Step 4: Decryption 
+## Decryption 
 
 ```r
 decrypt <- function(message, keyword) {
@@ -75,4 +76,5 @@ decrypt("eIvNvhva!Njlljb?vX", "hello")
 ```
 ## [1] "The enemy attacked"
 ```
+
 

@@ -1,7 +1,7 @@
 Substitution Cypher
 ========================================================
 
-## Step 1: Key
+## Key
 ```{r}
 key <- function(word){
   key <- unlist(strsplit(tolower(word), NULL))
@@ -14,14 +14,15 @@ key <- function(word){
   return(as.numeric(res))
 }
 ```
+
 ## Test Case
 ```{r}
 key("soccer")
 ```
 
-## Step 2: The Cypher: Encrypt
+## The Cypher/Encryption
 ```{r}
-encrypt <-  function(keyword,message){
+encrypt <- function(keyword,message){
 cSet <- (c(letters,LETTERS, ".", "?", "!", " "))
 set.seed(key(keyword))
 code <- sample(cSet)
@@ -35,7 +36,7 @@ return(telegram)}
 encrypt("hello", "The enemy attacked")
 ```
 
-## Step 4: Decryption 
+## Decryption 
 ```{r}
 decrypt <-  function(message,keyword){
 cSet <- (c(letters,LETTERS, ".", "?", "!", " "))
@@ -50,3 +51,4 @@ return(telegram)}
 ```{r}
 decrypt("eIvNvhva!Njlljb?vX", "hello")
 ```
+
