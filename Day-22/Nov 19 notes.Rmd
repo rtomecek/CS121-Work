@@ -1,10 +1,21 @@
 November 19, 2013: Day-22 notes
 ========================================================
 
+## Data
+
+```{r}
+require(devtools)
+install_github("DCF", username="dtkaplan")
+require(mosaic)
+require(DCF)
+```
 
 
+http://github.com/dtkaplan/DCF/raw/master/data/nhanes.rda 
 
+xyplot( wgt ~ hgt, data=small, groups=sex, main="", auto.key=list(space="right")) 
 
+ggplot(data=small, aes(x=hgt, y=wgt)) + geom_point()  + aes(colour=diab) + aes(size=diab) + theme(legend.position="right") + labs(title="") 
 
 
 
