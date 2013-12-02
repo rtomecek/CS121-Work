@@ -1,14 +1,57 @@
 # Crosswords, Scrabble, and Regular Expressions
 ========================================================
 
-## Summarizing the List
 ```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+```
 
+## Summarizing the List
 
+### Number of words length 1
+```{r}
+LengthOne <- function(x){
+  analyze <- grepl("^.$", x)
+  return(length(x[analyze]))
+  }
+```
+
+### Length 1 test
+```{r}
+LengthOne(words)
+```
+
+### Number of words length 2
+```{r}
+LengthTwo <- function(x){
+  analyze <- grepl("^..$", x)
+  return(length(x[analyze]))
+  }
+```
+
+### Length 2 Test
+```{r}
+LengthTwo(words)
+```
+
+### Number of words length 3
+```{r}
+LengthThree <- function(x){
+  analyze <- grepl("^...$", x)
+  return(length(x[analyze]))
+  }
+```
+
+### Length Three Test
+```{r}
+LengthThree(words)
 ```
 
 
-## Crossword helper function
+
+
+
+
+## Crossword helper function?
 ```{r}
 crossword <- function(expression){
  words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
@@ -18,19 +61,30 @@ crossword <- function(expression){
 ```
 
 ```{r}
-crossword("^c.r$")
+crossword("^c...r$")
 ```
 
 ## Crossword Pattern function
 ```{r}
-crosswrodPattern <- function (x){
-
+crosswordPattern <- function(length, ...){
+  letters <- list(...)
+  str <- c("^", rep(".", length), "$")
+  for(k in 1:length(letters)) str[letters[[k]]+1] <- names(letters[k])
+  paste(str, collapse = "")
   }
 ```
 
 ## Scrabble function
 ```{r}
-scrabble <- function(x){
-  
+scrabble <- function(length, ...){
+  words[grep(crosswordPattern(length, ...),words)]
 }
 ```
+
+### Scrabble test
+```{r}
+scrabble(length = 6, a = 2, d = 5)
+```
+
+
+

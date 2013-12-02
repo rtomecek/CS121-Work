@@ -183,9 +183,60 @@ hljs.initHighlightingOnLoad();
 
 <h1></h1>
 
+<pre><code class="r">words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+</code></pre>
+
 <h2>Summarizing the List</h2>
 
-<h2>Crossword helper function</h2>
+<h3>Number of words length 1</h3>
+
+<pre><code class="r">LengthOne &lt;- function(x) {
+    analyze &lt;- grepl(&quot;^.$&quot;, x)
+    return(length(x[analyze]))
+}
+</code></pre>
+
+<h3>Length 1 test</h3>
+
+<pre><code class="r">LengthOne(words)
+</code></pre>
+
+<pre><code>## [1] 0
+</code></pre>
+
+<h3>Number of words length 2</h3>
+
+<pre><code class="r">LengthTwo &lt;- function(x) {
+    analyze &lt;- grepl(&quot;^..$&quot;, x)
+    return(length(x[analyze]))
+}
+</code></pre>
+
+<h3>Length 2 Test</h3>
+
+<pre><code class="r">LengthTwo(words)
+</code></pre>
+
+<pre><code>## [1] 85
+</code></pre>
+
+<h3>Number of words length 3</h3>
+
+<pre><code class="r">LengthThree &lt;- function(x) {
+    analyze &lt;- grepl(&quot;^...$&quot;, x)
+    return(length(x[analyze]))
+}
+</code></pre>
+
+<h3>Length Three Test</h3>
+
+<pre><code class="r">LengthThree(words)
+</code></pre>
+
+<pre><code>## [1] 908
+</code></pre>
+
+<h2>Crossword helper function?</h2>
 
 <pre><code class="r">crossword &lt;- function(expression) {
     words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
@@ -194,24 +245,43 @@ hljs.initHighlightingOnLoad();
 }
 </code></pre>
 
-<pre><code class="r">crossword(&quot;^c.r$&quot;)
+<pre><code class="r">crossword(&quot;^c...r$&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;car&quot; &quot;cur&quot;
+<pre><code>##  [1] &quot;caber&quot; &quot;cager&quot; &quot;caner&quot; &quot;caper&quot; &quot;carer&quot; &quot;cater&quot; &quot;caver&quot; &quot;cedar&quot;
+##  [9] &quot;ceder&quot; &quot;chair&quot; &quot;charr&quot; &quot;cheer&quot; &quot;chirr&quot; &quot;choir&quot; &quot;churr&quot; &quot;cider&quot;
+## [17] &quot;cigar&quot; &quot;citer&quot; &quot;clear&quot; &quot;clour&quot; &quot;coder&quot; &quot;color&quot; &quot;comer&quot; &quot;cooer&quot;
+## [25] &quot;coper&quot; &quot;corer&quot; &quot;cover&quot; &quot;cower&quot; &quot;coyer&quot; &quot;crier&quot; &quot;cruor&quot; &quot;cuber&quot;
+## [33] &quot;curer&quot; &quot;cuter&quot; &quot;cyder&quot; &quot;cymar&quot;
 </code></pre>
 
 <h2>Crossword Pattern function</h2>
 
-<pre><code class="r">crosswrodPattern &lt;- function(x) {
-
+<pre><code class="r">crosswordPattern &lt;- function(length, ...) {
+    letters &lt;- list(...)
+    str &lt;- c(&quot;^&quot;, rep(&quot;.&quot;, length), &quot;$&quot;)
+    for (k in 1:length(letters)) str[letters[[k]] + 1] &lt;- names(letters[k])
+    paste(str, collapse = &quot;&quot;)
 }
 </code></pre>
 
 <h2>Scrabble function</h2>
 
-<pre><code class="r">scrabble &lt;- function(x) {
-
+<pre><code class="r">scrabble &lt;- function(length, ...) {
+    words[grep(crosswordPattern(length, ...), words)]
 }
+</code></pre>
+
+<h3>Scrabble test</h3>
+
+<pre><code class="r">scrabble(length = 6, a = 2, d = 5)
+</code></pre>
+
+<pre><code>##  [1] &quot;cairds&quot; &quot;caulds&quot; &quot;facade&quot; &quot;farads&quot; &quot;faulds&quot; &quot;gadids&quot; &quot;hairdo&quot;
+##  [8] &quot;halide&quot; &quot;halids&quot; &quot;lairds&quot; &quot;lambda&quot; &quot;lamedh&quot; &quot;lameds&quot; &quot;malady&quot;
+## [15] &quot;maunds&quot; &quot;maundy&quot; &quot;naiads&quot; &quot;naleds&quot; &quot;pagoda&quot; &quot;pagods&quot; &quot;panada&quot;
+## [22] &quot;parade&quot; &quot;parody&quot; &quot;ranids&quot; &quot;rapids&quot; &quot;salads&quot; &quot;sarode&quot; &quot;sarods&quot;
+## [29] &quot;sayids&quot; &quot;yairds&quot;
 </code></pre>
 
 </body>
