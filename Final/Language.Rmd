@@ -9,9 +9,9 @@ fetchData("COMP121/word-hints.R")
 # letterProportion function
 ```{r}
 letterProportion <- function(string){
-  strsplit(string, split = "")
-  
-
+  tolower(string) #Put character sting in all lowercase
+  small <- strsplit(string, split = "") # split up the character string into individual letters
+  table(small) # make a table of those letters from the character string
 
   }
 ```
@@ -19,20 +19,28 @@ letterProportion <- function(string){
 
 # FreqCompare function
 ```{r}
-E <- English
-freqCompare <- function(output from letterProportion, E){
+E <- English #Define the languages
+G <- German
+Fi <- Finnish
+Fr <- French
+I <- Italian
+S <- Spanish
+freqCompare <- function(output from letterProportion, language) #Output will be a table and choose a language{
+  observed <- "letter frequency from the string" #letter proportion from the character string
+  language <- "language frequency" #letter proportion from the language chosen
   difference <- (observed - language)
-  chisq <- ((difference^2)%%language)
+  chisq <- ((difference^2)%%language) #Chisq test
   
   }
 ```
 
 # WhichLanguage function
 ```{r}
-whichLanguage <- function(){
+whichLanguage <- function(character string as a language, list of language letter frequencies){
   
   
-  return(chisq)
+  
+  return(language with smallest chisq)
   }
 ```
 

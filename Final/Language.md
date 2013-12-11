@@ -45,8 +45,9 @@ fetchData("COMP121/word-hints.R")
 
 ```r
 letterProportion <- function(string) {
-    
-    
+    tolower(string)  #Put character sting in all lowercase
+    small <- strsplit(string, split = "")  # split up the character string into individual letters
+    table(small)  # make a table of those letters from the character string
     
 }
 ```
@@ -54,25 +55,6 @@ letterProportion <- function(string) {
 
 
 # FreqCompare function
-
-```r
-freqCompare <- function() {
-    
-    
-}
-```
-
-
-# WhichLanguage function
-
-```r
-whichLanguage <- function() {
-    
-    
-    return(chisq)
-}
-```
-
 
 
 
