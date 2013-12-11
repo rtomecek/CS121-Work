@@ -47,7 +47,7 @@ fetchData("COMP121/word-hints.R")
 letterProportion <- function(string) {
     small <- strsplit(string, split = "")  # split up the character string into individual letters
     tolower(small)  #Put character sting in all lowercase
-    table(small)  # make a table of those letters from the character string
+    table(small)  # make a table of those letters from the character string. Need to make the result a proportion.
     
 }
 ```
