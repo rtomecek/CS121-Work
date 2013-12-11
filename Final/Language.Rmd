@@ -19,7 +19,7 @@ letterProportion <- function(string){
 
 # FreqCompare function
 ```{r}
-E <- English #Define the languages
+E <- English #Define the languages(Probably not needed?)
 G <- German
 Fi <- Finnish
 Fr <- French
@@ -36,11 +36,16 @@ freqCompare <- function(output from letterProportion, language) #Output will be 
 
 # WhichLanguage function
 ```{r}
-whichLanguage <- function(character string as a language, list of language letter frequencies){
+whichLanguage <- function(character string as a language, list(English,German,Finnish,French,Italian,Spanish)){
+  English - Chisq
+  German - Chisq
+  Finnish - Chisq
+  French - Chisq
+  Italian - Chisq
+  Spanish - Chisq
   
   
-  
-  return(language with smallest chisq)
+  return(language #with smallest chisq)
   }
 ```
 
