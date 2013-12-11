@@ -43,9 +43,9 @@ whichLanguage <- function(character string as a language, list(English,German,Fi
   FrenDiff <- (French - Chisq)
   ItalDiff <- (Italian - Chisq)
   SpanDiff <- (Spanish - Chisq)
+  which.min(EnglDiff,GermDiff,FinnDiff,FrenDiff,ItalDiff,SpanDiff)
   
-  
-  return(language #with smallest chisq)
+  return(which.min) #language with smallest chisq
   }
 ```
 
