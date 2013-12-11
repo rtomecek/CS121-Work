@@ -215,6 +215,31 @@ hljs.initHighlightingOnLoad();
 }
 </code></pre>
 
+<h2>Stuff from In-Class</h2>
+
+<h3>Derivatives as Finite Differences</h3>
+
+<pre><code class="r">myD &lt;- function(f, h = 1e-07) {
+    fprime &lt;- function(x) {
+        (f(x + h) - f(x))/h
+    }
+    return(fprime)
+}
+myD2 &lt;- function(f, h = 1e-07) {
+    fprime &lt;- myD(f, h = h)
+    fprime2 &lt;- myD(fprime, h = h)
+    return(fprime2)
+}
+prime2 &lt;- myD2(sin)
+</code></pre>
+
+<pre><code class="r">rossD &lt;- function(f, x) {
+    h &lt;- 0.001
+    res &lt;- (f(x + h) - f(x))/h
+    return(res)
+}
+</code></pre>
+
 </body>
 
 </html>

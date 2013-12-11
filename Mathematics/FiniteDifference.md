@@ -47,6 +47,36 @@ myD <- function(f) {
 ```
 
 
+## Stuff from In-Class
+
+### Derivatives as Finite Differences
+
+```r
+myD <- function(f, h = 1e-07) {
+    fprime <- function(x) {
+        (f(x + h) - f(x))/h
+    }
+    return(fprime)
+}
+myD2 <- function(f, h = 1e-07) {
+    fprime <- myD(f, h = h)
+    fprime2 <- myD(fprime, h = h)
+    return(fprime2)
+}
+prime2 <- myD2(sin)
+```
+
+
+
+```r
+rossD <- function(f, x) {
+    h <- 0.001
+    res <- (f(x + h) - f(x))/h
+    return(res)
+}
+```
+
+
 
 
 
