@@ -181,6 +181,37 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Final Exam</h1>
 
+<pre><code class="r">require(mosaic)
+</code></pre>
+
+<pre><code>## Loading required package: mosaic
+</code></pre>
+
+<pre><code>## Warning: package &#39;mosaic&#39; was built under R version 3.0.2
+</code></pre>
+
+<pre><code>## Loading required package: grid Loading required package: lattice
+## 
+## Attaching package: &#39;mosaic&#39;
+## 
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+## binom.test, cor, cov, D, fivenum, IQR, median, prop.test, sd, t.test, var
+## 
+## The following object is masked from &#39;package:base&#39;:
+## 
+## max, mean, min, print, prod, range, sample, sum
+</code></pre>
+
+<pre><code class="r">fetchData(&quot;COMP121/word-hints.R&quot;)
+</code></pre>
+
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/COMP121/word-hints.R
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
 <h1>letterProportion function</h1>
 
 <pre><code class="r">letterProportion &lt;- function(string) {

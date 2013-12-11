@@ -1,9 +1,15 @@
 Final Exam
 ========================================================
 
+```{r}
+require(mosaic)
+fetchData("COMP121/word-hints.R")
+```
+
 # letterProportion function
 ```{r}
 letterProportion <- function(string){
+  strsplit(string, split = "")
   
 
 
@@ -13,8 +19,10 @@ letterProportion <- function(string){
 
 # FreqCompare function
 ```{r}
-freqCompare <- function(){
-
+E <- English
+freqCompare <- function(output from letterProportion, E){
+  difference <- (observed - language)
+  chisq <- ((difference^2)%%language)
   
   }
 ```
